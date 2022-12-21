@@ -1,6 +1,11 @@
-export default function Form() {
+export default function Form(setMessage) {
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        setMessage(event.target.name.value);
+      }}
+    >
       <label htmlFor="name">Name</label>
       <input type="text" id="name" />
       <button type="submit">Submit</button>

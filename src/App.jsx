@@ -1,5 +1,18 @@
+import { useState } from "react";
+import Form from "./components/Form";
+import Heading from "./components/Heading";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  const [message, setMessage] = useState("hello");
+
+  console.log(message);
+
+  return (
+    <>
+      <Heading message={message} />
+      <Form setMessage={setMessage} />
+    </>
+  );
 }
 
 export default App;
